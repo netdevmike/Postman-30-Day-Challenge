@@ -10,7 +10,7 @@
 			"name": "Postman API",
 			"item": [
 				{
-					"name": "Single Collection ",
+					"name": "get single collection",
 					"event": [
 						{
 							"listen": "test",
@@ -46,14 +46,7 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "https://api.getpostman.com/collections/{{collection_uid}}",
 							"protocol": "https",
@@ -65,13 +58,6 @@
 							"path": [
 								"collections",
 								"{{collection_uid}}"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
 							]
 						},
 						"description": "Access the contents of a collection that is accessible to you using its unique id (`uid`).\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
@@ -116,7 +102,7 @@
 					]
 				},
 				{
-					"name": "Single Environment",
+					"name": "get single environment",
 					"event": [
 						{
 							"listen": "test",
@@ -140,14 +126,7 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "https://api.getpostman.com/environments/{{environment_uid}}",
 							"protocol": "https",
@@ -203,7 +182,7 @@
 					]
 				},
 				{
-					"name": "Single workspace",
+					"name": "get single workspace",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -218,13 +197,6 @@
 							"path": [
 								"workspaces",
 								"{{workspace_id}}"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
 							]
 						},
 						"description": "Access the contents of a workspace that is accessible to you using its id (`id`). Includes the collections, environments, mocks and monitors of that workspace.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."

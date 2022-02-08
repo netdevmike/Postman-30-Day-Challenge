@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "ca179b96-5a88-4822-924f-6a4a9ca9b452",
+		"name": "Postman Collection (from GraphQL)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "queries",
+			"item": [
+				{
+					"name": "hi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query hi ($message: String) {\n    hi (message: $message)\n}",
+								"variables": "{\n  \"message\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "queryArtists",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query queryArtists ($limit: Int, $limit1: Int, $byName: String) {\n    queryArtists (byName: $byName) {\n        name\n        id\n        image\n        albums (limit: $limit1) {\n            name\n            id\n            image\n            tracks {\n                name\n                artists {\n                    name\n                    id\n                    image\n                    albums (limit: $limit) {\n                        name\n                        id\n                        image\n                    }\n                }\n                preview_url\n                id\n            }\n        }\n    }\n}",
+								"variables": "{\n  \"limit\": 0,\n  \"limit1\": 0,\n  \"byName\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "any",
+			"description": "URL for the request."
+		}
+	]
+}
